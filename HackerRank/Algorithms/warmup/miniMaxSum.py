@@ -12,7 +12,7 @@ def miniMaxSum(arr):
     for n in arr:
         if n > max:
             max = n
-        if n < min:
+        elif n < min:
             min = n
     res = [sum(arr) - max, sum(arr) - min]
     print(*res)
