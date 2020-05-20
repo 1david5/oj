@@ -4,10 +4,6 @@
 # problem url: https://www.hackerrank.com/challenges/time-conversion/problem
 # date: 06/02/2019
 
-s = '10:05:45PM'
-
-time = input()
-
 def timeConversion(time):
     z = '00'
     h = int(time[:2]) + 12
@@ -19,6 +15,3 @@ def timeConversion(time):
         if h !=24:
             return str(h) + time[2:8]
         return time[:8]
-        
-
-timeConversion(time)

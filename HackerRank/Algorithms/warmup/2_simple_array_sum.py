@@ -5,16 +5,4 @@
 # date: 05/29/2019
 
 def simpleArraySum(ar):
-    #return sum(ar)
-    x = 0
-    for i in ar:
-        x += i
-    return x
-
-n = int(input())
-inp = input()
-array = inp.split()
-for i in range(n):
-    array[i] = int(array[i])
-
-simpleArraySum(array)
+    return sum(ar)

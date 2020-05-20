@@ -4,8 +4,6 @@
 # problem url: https://www.hackerrank.com/challenges/mini-max-sum/problem
 # date: 05/30/2019
 
-x = [1,3,5,7,9]
-
 def miniMaxSum(arr):
     min = arr[0]
     max = arr[0]
@@ -16,5 +14,3 @@ def miniMaxSum(arr):
             min = n
     res = [sum(arr) - max, sum(arr) - min]
     print(*res)
-
-miniMaxSum(x)
