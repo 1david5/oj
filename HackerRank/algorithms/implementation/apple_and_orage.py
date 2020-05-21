@@ -2,7 +2,7 @@
 # source: HackerRank ( https://www.hackerrank.com )
 # problem name: Algorithms: Implementation: Apple and Orange
 # problem url: https://www.hackerrank.com/challenges/apple-and-orange/problem
-# date: 05//2020
+# date: 05/20/2020
 
 def countApplesAndOranges(s, t, a, b, apples, oranges):
     a_min = s - a
