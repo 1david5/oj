@@ -4,28 +4,29 @@
 # problem url: https://www.hackerrank.com/challenges/two-characters/problem
 # date: 05/21/2020
 
+#!/bin/python3
+
 def alternate(s):
     unic = sorted(list(set(s)))
-    m = []
-    n = 0
+    string_length = 0
 
-    # Cretate matrix with possible character conbinations
-    for i in range(len(unic)):
-        for j in range(i + 1, len(unic)):
-            m.append([unic[i], unic[j]])
+    for index1 in range(len(unic)):
+        for index2 in range(index1 + 1, len(unic)):
+            lst = []
+            for char in s:
+                pair = {unic[index1], unic[index2]}
+                char_in_pair = char in pair
+                if char_in_pair:
+                    if not lst or char != lst[-1]:
+                        lst.append(char)
+                    elif char == lst[-1]:
+                        lst = []
+                        break
+            if len(lst) > string_length:
+                string_length = len(lst)
+    return string_length
 
-    #Create possible lists with two alternating characteres and compare their lengths
-    for pair in m:
-        lst = []
-        for char in s:
-            if char in pair and not lst:
-                lst.append(char)
-                continue
-            elif char in pair and char != lst[-1]:
-                lst.append(char)
-            elif char in pair and char == lst[-1]:
-                lst = []
-                break
-        if len(lst) > n:
-            n = len(lst)
-    return n
+input()
+s = str(input())
+
+print(int(alternate(s)))
