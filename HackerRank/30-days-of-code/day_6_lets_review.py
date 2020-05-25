@@ -4,10 +4,10 @@
 # problem url: https://www.hackerrank.com/challenges/30-review-loop/problem
 # date: 05/25/2020
 
-test_cases_amount = int(input())
+test_case_amount = int(input())
 words = []
 
-for i in range(test_cases_amount):
+for i in range(test_case_amount):
     words.append(input())
 
 for word in words:
