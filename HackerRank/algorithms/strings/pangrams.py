@@ -4,5 +4,4 @@
 # problem url: https://www.hackerrank.com/challenges/pangrams/problem
 # date: 05/23/2020
 
-alphabet_letters = {char.lower() for char in input("Enter sentence: ") if char != " "}
-print("pangram" if len(alphabet_letters) == 26 else "not pangram")
+print("pangram" if len(set(input().lower() + " ")) >= 27 else "not pangram")
