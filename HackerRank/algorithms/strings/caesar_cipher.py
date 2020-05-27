@@ -33,8 +33,6 @@ def out_of_range_ascii(encrypted_char, minimum, maximum):
     minimum -= 1
     ascii_range_length = 26
     module = (encrypted_char - maximum) % ascii_range_length
-    print("module", module)
-    print("module", module)
     if not module:
         return maximum
     normalized_char = minimum + module
