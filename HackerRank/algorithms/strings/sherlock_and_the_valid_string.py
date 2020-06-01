@@ -4,44 +4,38 @@
 # problem url: https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem
 # date: 05/30/2020
 
-def equal_freq(iterator):
-    if iterator.count(iterator[0]) == len(iterator):
+def create_freq_list(string):
+    frequencies = {}
+    for letter in string:
+        if letter in frequencies:
+            frequencies[letter] += 1
+        else:
+            frequencies[letter] = 1
+    return list(frequencies.values())
+
+
+def is_valid_string(freq_lst):
+    freq_max = max(freq_lst)
+    freq_min = min(freq_lst)
+    max_count = freq_lst.count(freq_max)
+    min_count = freq_lst.count(freq_min)
+
+    if freq_min == freq_max:
         return True
+    elif max_count + min_count == len(freq_lst):
+        if freq_min == 1 and min_count == 1:
+            return True
+        elif  (freq_max - 1) == freq_min and max_count == 1:
+            return True
+        else:
+            return False
     else:
         return False
 
-input_str = input()
-frequencies = {}
-for letter in input_str:
-    if letter in frequencies:
-        frequencies[letter] += 1
-    else:
-        frequencies[letter] = 1
 
-freq_lst = list(frequencies.values())
+def main():
+    input_str = input()
+    freq_lst = create_freq_list(input_str)
+    print("YES" if is_valid_string(freq_lst) else "NO")
 
-if equal_freq(freq_lst):
-    print("YES")
-else:
-    out_of_freq = 0
-    for i in range(len(freq_lst) - 1):
-        if freq_lst[i + 1] == freq_lst[i]:
-            continue
-        elif freq_lst[i + 1] == 1:
-            del freq_lst[i + 1]
-            if equal_freq(freq_lst):
-                print("YES")
-                exit()
-            else:
-                print("NO")
-                exit()
-        elif (freq_lst[i + 1] - 1) == freq_lst[i]:
-            out_of_freq += 1
-            freq_lst[i + 1] -= 1
-        else:
-            print("NO")
-            exit()
-        if out_of_freq > 1:
-            print("NO")
-            exit()
-    print("YES")
+main()
