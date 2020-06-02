@@ -7,14 +7,7 @@
 def theLoveLetterMystery(s):
     changes = 0
     for i in range(len(s) // 2):
-        lead = s[i]
-        tail = s[(i + 1) * -1]
-        while lead > tail:
-            lead = chr(ord(lead) - 1)
-            changes +=1
-        while lead < tail:
-            tail = chr(ord(tail) - 1)
-            changes +=1
+        changes += abs(ord(s[i]) - ord(s[-(i + 1)]))
     return changes
 
 query_number = int(input())
