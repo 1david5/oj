@@ -11,10 +11,9 @@ def list_of_frequencies(s):
             char_freq[char] += 1
         else:
             char_freq[char] = 1
-    print(char_freq)
     return list(char_freq.values())
 
-def gameOfThrones(s):
+def game_of_thrones(s):
     freq_list = list_of_frequencies(s)
     odd_count = 0
     for freq in freq_list:
@@ -24,5 +23,4 @@ def gameOfThrones(s):
                 return "NO"
     return "YES"
 
-
-print(gameOfThrones(input()))
+print(game_of_thrones(input()))
