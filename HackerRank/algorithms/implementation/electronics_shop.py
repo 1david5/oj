@@ -14,12 +14,9 @@ def get_money_spent(budget, keyboard, usb):
     return spent
 
 def main():
-    b_n_m = input().strip().split()
-    budget = int(b_n_m[0])
-    keboard_count = int(b_n_m[1])
-    usb_count = int(b_n_m[2])
-    keyboards_price = list(map(int, input().strip().split()))
-    usb_price = list(map(int, input().strip().split()))
+    budget, k_count, u_count = [int(i) for i in input().strip().split()]
+    keyboards_price = [int(k) for k in input().strip().split()]
+    usb_price = [int(u) for u in input().strip().split()]
     print(get_money_spent(budget, keyboards_price, usb_price))
 
 if __name__ == "__main__":
